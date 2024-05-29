@@ -34,7 +34,7 @@ function App() {
     if (posts.length === 0) {
       return <div>No posts found</div>;
     }
-
+    posts.length = 5;
     return (
       <div className=" grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         {posts.map((post) => {
