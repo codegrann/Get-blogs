@@ -39,7 +39,7 @@ function App() {
       <div>
         {posts.map((post) => {
           return (
-            <div key={post.id} className="border-2 border-black p-4">
+            <div key={post.id} className="shadow-lg p-4 w-[300px] mx-auto">
               <h2 className="text-sm font-bold ">{post.title}</h2>
               <p className="text-xs">{post.body}</p>
             </div>
