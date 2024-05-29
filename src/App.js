@@ -40,8 +40,8 @@ function App() {
         {posts.map((post) => {
           return (
             <div key={post.id} className="border-2 border-black p-4">
-              <h2>{post.title}</h2>
-              <p>{post.body}</p>
+              <h2 className="text-sm font-bold ">{post.title}</h2>
+              <p className="text-xs">{post.body}</p>
             </div>
           );
         })}
@@ -50,8 +50,8 @@ function App() {
   }
 
   return (
-    <div className="bg-green-800 mx-auto pl-4">
-      <h1>Latest News</h1>
+    <div className="bg-gray-200 mx-auto">
+      <h1 className="text-md font-bold ml-4">Latest News</h1>
       <Blogs />
     </div>
   );
