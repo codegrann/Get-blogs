@@ -36,10 +36,13 @@ function App() {
     }
 
     return (
-      <div>
+      <div className=" grid grid-cols-1 gap-4">
         {posts.map((post) => {
           return (
-            <div key={post.id} className="shadow-lg p-4 w-[300px] mx-auto">
+            <div
+              key={post.id}
+              className="shadow-lg p-4 w-[300px] rounded-sm mx-auto sm:rounded-md bg-white"
+            >
               <h2 className="text-sm font-bold ">{post.title}</h2>
               <p className="text-xs">{post.body}</p>
             </div>
