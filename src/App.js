@@ -50,7 +50,7 @@ function App() {
   }
 
   return (
-    <div className="bg-gray-200 mx-auto">
+    <div className="bg-gray-200 mx-auto py-6">
       <h1 className="text-md font-bold ml-4">Latest News</h1>
       <Blogs />
     </div>
