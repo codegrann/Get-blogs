@@ -8,7 +8,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [lat, setLat] = useState(5);
+  const [visible, setVisible] = useState(5);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
@@ -25,7 +25,7 @@ function App() {
   }, []);
 
   function handleLoadMore() {
-    setLat(lat + 5);
+    setVisible((prevVisible) => prevVisible + 5);
   }
 
   function Blogs() {
@@ -36,12 +36,12 @@ function App() {
       return <div>Error: {error.message}</div>;
     }
     if (posts.length === 0) {
-      return <div>No posts found</div>;
+      return <div>No posts currently</div>;
     }
-    posts.length = lat;
+
     return (
       <div className=" grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-        {posts.map((post) => {
+        {posts.slice(0, visible).map((post) => {
           return (
             <div
               key={post.id}
@@ -60,7 +60,10 @@ function App() {
     <div className="mx-auto py-6">
       <h1 className="text-md font-bold ml-4 mb-8">Latest News</h1>
       <Blogs />
-      <button className="text-md font-bold ml-4 mt-6" onClick={handleLoadMore}>
+      <button
+        className="text-md font-bold ml-4 mt-6 bg-blue-400 hover:bg-blue-500 text-white py-2 px-4 rounded"
+        onClick={handleLoadMore}
+      >
         Load more
       </button>
     </div>
