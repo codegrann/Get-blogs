@@ -40,7 +40,7 @@ function App() {
     }
 
     return (
-      <div className=" grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+      <div className="min-[1300px]:px-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         {posts.slice(0, visible).map((post) => {
           return (
             <div
