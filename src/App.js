@@ -39,7 +39,7 @@ function App() {
       <div>
         {posts.map((post) => {
           return (
-            <div key={post.id}>
+            <div key={post.id} className="border-2 border-black p-4">
               <h2>{post.title}</h2>
               <p>{post.body}</p>
             </div>
@@ -50,10 +50,10 @@ function App() {
   }
 
   return (
-    <>
+    <div className="bg-green-800 mx-auto pl-4">
       <h1>Latest News</h1>
       <Blogs />
-    </>
+    </div>
   );
 }
 
