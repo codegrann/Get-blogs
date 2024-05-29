@@ -64,7 +64,7 @@ function App() {
         className="text-md font-bold ml-4 mt-6 bg-blue-400 hover:bg-blue-500 text-white py-2 px-4 rounded"
         onClick={handleLoadMore}
       >
-        Load more
+        Load more. . .
       </button>
     </div>
   );
