@@ -8,7 +8,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [lat, setLat] = useState(0);
+  const [lat, setLat] = useState(5);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
@@ -24,6 +24,10 @@ function App() {
       });
   }, []);
 
+  function handleLoadMore() {
+    setLat(lat + 5);
+  }
+
   function Blogs() {
     if (isLoading || !isLoaded) {
       return <Spinner />;
@@ -34,7 +38,7 @@ function App() {
     if (posts.length === 0) {
       return <div>No posts found</div>;
     }
-    posts.length = 5;
+    posts.length = lat;
     return (
       <div className=" grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         {posts.map((post) => {
@@ -56,6 +60,9 @@ function App() {
     <div className="mx-auto py-6">
       <h1 className="text-md font-bold ml-4 mb-8">Latest News</h1>
       <Blogs />
+      <button className="text-md font-bold ml-4 mt-6" onClick={handleLoadMore}>
+        Load more
+      </button>
     </div>
   );
 }
